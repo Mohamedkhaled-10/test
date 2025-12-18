@@ -9,19 +9,13 @@
 <body>
   <h1>صفحة تجريبية</h1>
 
-  <!-- الحاوية اللي هيظهر فيها الإعلان -->
-  <div class="ad-container" id="my-ad-1"></div>
-
-  <!-- كود التضمين السهل: بس تحط data-template-id = id بتاع القالب اللي في Firebase -->
-  <script type="module">
-    import initAdEmbed from 'ad-embed.js';
-
-    // لو عايز تستخدم أكثر من إعلان، هنادي initAdEmbed لكل واحد
-    initAdEmbed({
-      containerId: 'preset_mobile',
-      templateId: '-OgU1dYPV2JwD8qirhaJ' // لازم نفس الID اللي في قاعدة البيانات
-    });
-  </script>
+ <div id="AD_CONTAINER_ID"></div>
+<script type="module">
+  import initAdEmbed from 'https://mohamedkhaled-10.github.io/test/ad-embed.js';
+  initAdEmbed({ containerId: 'AD_CONTAINER_ID', templateId: 'preset_leaderboard' });
+</script>
+<!-- تأكد إن ad-embed.js متاح في نفس المسار أو غيّر THIS_ASSETS_BASE -->
 </body>
 </html>
+
 
