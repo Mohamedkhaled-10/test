@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لوحة إدارة إعلانات - Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>لوحة إدارة القوالب (بدون تسجيل)</h1>
+
+    <p class="small-muted">اختر قالب جاهز (Preset) أو ابدأ بقالب فارغ، ضع رابط الصورة، ثم اضغط "حفظ/نشر" — الإعلان سيظهر فورًا في أي صفحة تحتوي الـ snippet.</p>
+
+    <div id="template-form">
+      <div class="form-row">
+        <label>القالب الجاهز</label>
+        <select id="presetSelect">
+          <option value="">— اختر قالب —</option>
+          <option value="preset_leaderboard">Leaderboard - 728 × 90</option>
+          <option value="preset_sidebar">Sidebar - 300 × 600</option>
+          <option value="preset_rect">Medium Rectangle - 300 × 250</option>
+          <option value="preset_mobile">Mobile Banner - 320 × 50</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>معرف القالب (ID)</label>
+        <input id="templateId" type="text" placeholder="مثال: banner_top أو اتركه يُملأ تلقائياً" />
+      </div>
+
+      <div class="form-row">
+        <label>اسم القالب</label>
+        <input id="templateName" type="text" placeholder="مثال: بانر أعلى الصفحة" />
+      </div>
+
+      <div class="form-row">
+        <label>رابط الصورة (URL)</label>
+        <input id="imageUrl" type="url" placeholder="https://..." />
+      </div>
+
+      <div class="form-row">
+        <label>رابط الهدف (عند الضغط)</label>
+        <input id="targetUrl" type="url" placeholder="https://..." />
+      </div>
+
+      <div class="form-row">
+        <label>عرض (px)</label>
+        <input id="width" type="number" min="0" placeholder="مثال: 728" />
+        <label>ارتفاع (px)</label>
+        <input id="height" type="number" min="0" placeholder="مثال: 90" />
+      </div>
+
+      <div class="form-row">
+        <label>اظهار كلمة "Ad"</label>
+        <select id="showLabel"><option value="true">اظهر</option><option value="false" selected>اخفي</option></select>
+
+        <label>Border radius (px)</label>
+        <input id="borderRadius" type="number" value="6" />
+      </div>
+
+      <div style="margin-top:10px;">
+        <button id="saveTemplateBtn">حفظ / نشر القالب</button>
+        <button id="deleteTemplateBtn" style="background:#f44336">حذف القالب</button>
+      </div>
+    </div>
+
+    <hr />
+    <h2>القوالب المتاحة الآن</h2>
+    <div id="templatesList"></div>
+
+    <hr />
+    <h3>كود التضمين السريع</h3>
+    <p class="small-muted">انسخ الكود وحطه في أي صفحة تريد ظهور الإعلان فيها. غيّر `TEMPLATE_ID` للمعرّف الفعلي.</p>
+    <pre id="embedSnippet" style="background:#f6f6f6;padding:10px;border-radius:6px;"></pre>
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

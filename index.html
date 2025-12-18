@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مثال صفحة مع إعلان</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>صفحة تجريبية</h1>
+
+  <!-- الحاوية اللي هيظهر فيها الإعلان -->
+  <div class="ad-container" id="my-ad-1"></div>
+
+  <!-- كود التضمين السهل: بس تحط data-template-id = id بتاع القالب اللي في Firebase -->
+  <script type="module">
+    import initAdEmbed from './ad-embed.js';
+
+    // لو عايز تستخدم أكثر من إعلان، هنادي initAdEmbed لكل واحد
+    initAdEmbed({
+      containerId: 'my-ad-1',
+      templateId: 'banner_top' // لازم نفس الID اللي في قاعدة البيانات
+    });
+  </script>
+</body>
+</html>
